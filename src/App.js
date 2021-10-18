@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Redirect, Route, Switch } from 'react-router';
+import { privateRoutes, publicRoutes } from './routes';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const auth = false;
+	return !auth ? (
+		<Switch>
+			{publicRoutes.map(route => (
+				<Route key={route.path} {...route} />
+			))}
+			<Redirect to={'/auth'} />
+		</Switch>
+	) : (
+		<Switch>
+			{privateRoutes.map(route => (
+				<Route key={route.path} {...route} />
+			))}
+			<Route component={() => <div>404</div>} />
+		</Switch>
+	);
 }
 
 export default App;
