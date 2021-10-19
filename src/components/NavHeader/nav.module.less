@@ -1,0 +1,25 @@
+.btn_group {
+  grid-column: span 12;
+  display: grid;
+  grid-gap: 24px;
+  padding-top: calc(40px - 16px);
+  //padding-bottom: calc(52px - 16px);
+  grid-template-columns: inherit;
+}
+.create_adult {
+  grid-column: 1/5;
+}
+.search {
+  grid-column: 9/13;
+}
+@media screen and (min-width: 1440px) {
+  .btn_group{
+    grid-column: 1/span 11;
+  }
+  .create_adult {
+    grid-column: 1/span 2;
+  }
+  .search {
+    grid-column: 10/span 2;
+  }
+}

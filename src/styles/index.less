@@ -1,0 +1,103 @@
+@import './variables';
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: @GRAY_50;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]:hover,
+input[type="number"]:focus {
+  -moz-appearance: number-input;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#root{
+  height: 100vh;
+  max-width: 1920px;
+  margin: 0 auto;
+  //width: 100%;
+  .container{
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(12,1fr);
+    margin: 0 32px;
+    grid-gap: 16px 24px;
+    grid-template-rows: 80px 1fr;
+    padding-bottom: 100px;
+    .header{
+      grid-column: span 12;
+      margin: 0 -32px;
+    }
+    .footer{
+      grid-column: span 12;
+      margin: 0 -32px;
+    }
+    .side-bar{
+      display: none;
+    }
+    .content{
+      grid-column: span 12;
+      display: grid;
+      grid-template-columns: repeat(12,1fr);
+      grid-gap: 16px 24px;
+    }
+    @media screen and(min-width: 1440px){
+      &{
+        padding-bottom: 0;
+        grid-template-rows: 1fr;
+        .header{
+          display: none;
+        }
+        .footer{
+          display: none;
+        }
+        .side-bar{
+          display: block;
+          margin-left: -32px;
+          grid-column: 1/span 1;
+          height: 100%;
+          background: red;
+          width: 72px;
+          justify-self: start;
+        }
+        .content{
+          grid-column:2/ span 11;
+          display: grid;
+          grid-template-columns: repeat(11,1fr);
+          grid-gap: 16px 24px;
+        }
+      }
+    }
+  }
+}
+
+.form-fail{
+  padding: 2px 0 0 16px;
+  margin: 0;
+  @SMALL_TEXT();
+  color: @NOT_RED;
+}

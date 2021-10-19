@@ -1,9 +1,25 @@
 import React from 'react';
 import { Input as Text } from 'antd';
-const Input = ({ placeholder = 'Не указано', disabled = false }) => {
+import classes from './input.module.css';
+import cn from 'classnames';
+
+const Input = ({
+	label = '',
+	placeholder = 'Не указано',
+	disabled = false,
+	error = '',
+	...props
+}) => {
 	return (
 		<>
-			<Text placeholder={placeholder} disabled={disabled} />
+			<label className={classes.label}>{label}</label>
+			<Text
+				{...props}
+				className={cn({ [classes.error]: error })}
+				placeholder={placeholder}
+				disabled={disabled}
+			/>
+			{error && <p className={'form-fail'}>{error}</p>}
 		</>
 	);
 };

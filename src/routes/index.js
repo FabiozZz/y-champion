@@ -14,4 +14,29 @@ export const privateRoutes = [
 		exact: true,
 		component: General,
 	},
+	{
+		path: '/reports',
+		exact: true,
+		component: General,
+	},
+	{
+		path: '/stuffs',
+		exact: true,
+		component: General,
+	},
+	{
+		path: '/clients',
+		exact: true,
+		component: General,
+	},
+	{
+		path: '/settings',
+		exact: true,
+		component: General,
+	},
+	{
+		path: '/add_client',
+		exact: true,
+		component: General,
+	},
 ];

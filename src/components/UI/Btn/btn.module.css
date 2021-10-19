@@ -1,0 +1,109 @@
+/* COLORS */
+/* BTN STYLES */
+/* TEXT STYLES */
+.wrapper {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.125px;
+  text-transform: uppercase;
+  color: #000000;
+  grid-column: span 3;
+  border: 1px solid;
+  border-radius: 4px;
+  margin: 0;
+}
+.wrapper__size_auto {
+  width: 100%;
+  padding: 12px 0;
+}
+.wrapper__default {
+  color: #2E384D;
+  background: transparent;
+}
+.wrapper__default:hover {
+  background: rgba(46, 56, 77, 0.14);
+}
+.wrapper__default:active {
+  background: rgba(46, 56, 77, 0.5);
+}
+.wrapper__default:disabled {
+  background: #EEF3F5;
+  color: #BFC5D2;
+}
+.wrapper__default:focus {
+  outline-offset: -4px;
+  outline: 8px solid rgba(135, 152, 173, 0.35);
+}
+.wrapper__primary {
+  color: #FFFFFF;
+  background: #43BF41;
+}
+.wrapper__primary:hover {
+  background: #3EBA3C;
+}
+.wrapper__primary:active {
+  background: #32AB30;
+}
+.wrapper__primary:disabled {
+  background: #EEF3F5;
+  color: #BFC5D2;
+}
+.wrapper__primary:focus {
+  outline-offset: -4px;
+  outline: rgba(67, 191, 65, 0.26) solid 8px;
+}
+.wrapper__danger {
+  color: #FFFFFF;
+  background: #43BF41;
+  background: #E50E0F;
+}
+.wrapper__danger:hover {
+  background: #3EBA3C;
+}
+.wrapper__danger:active {
+  background: #32AB30;
+}
+.wrapper__danger:disabled {
+  background: #EEF3F5;
+  color: #BFC5D2;
+}
+.wrapper__danger:focus {
+  outline-offset: -4px;
+  outline: rgba(67, 191, 65, 0.26) solid 8px;
+}
+.wrapper__danger:hover {
+  background: #D61414;
+}
+.wrapper__danger:active {
+  background: #BD0E0F;
+}
+.wrapper__danger:disabled {
+  background: #EEF3F5;
+  color: #BFC5D2;
+}
+.wrapper__danger:focus {
+  outline-offset: -4px;
+  outline: 8px solid rgba(229, 14, 15, 0.4);
+}
+.wrapper__light {
+  color: #FFFFFF;
+  background: transparent;
+}
+.wrapper__light:hover {
+  background: rgba(46, 56, 77, 0.14);
+}
+.wrapper__light:active {
+  background: #2E384D;
+}
+.wrapper__light:disabled {
+  background: #EEF3F5;
+  color: #BFC5D2;
+}
+.wrapper__light:focus {
+  outline-offset: -4px;
+  outline: 8px solid rgba(255, 255, 255, 0.35);
+}
+/*# sourceMappingURL=btn.module.css.map */

@@ -1,0 +1,25 @@
+@import '../../../styles/variables';
+.wrapper{
+  @CAPTION();
+  grid-column: span 3;
+  border:1px solid;
+  border-radius: 4px;
+  margin: 0;
+  &__size_auto{
+    width: 100%;
+    padding: 12px 0;
+  }
+  &__default{
+    @BTN_DEFAULT();
+  }
+  &__primary{
+    @BTN_PRIMARY();
+  }
+  &__danger{
+    @BTN_DANGER();
+  }
+  &__light{
+    @BTN_LIGHT();
+  }
+
+}

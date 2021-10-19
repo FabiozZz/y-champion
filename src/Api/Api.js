@@ -1,5 +1,4 @@
 import axios, { CancelToken } from 'axios';
-import { CANCEL } from 'redux-saga';
 // import MockAdapter from "axios-mock-adapter";
 //
 // import clientsList from './jsonData/clientsList.json';
@@ -130,7 +129,7 @@ class Api {
 				if (
 					!this.refreshToken ||
 					// error.message ||
-					(error.response.status !== 401 && error.response.status !== 403) ||
+					(error.response?.status !== 401 && error.response?.status !== 403) ||
 					error.config.retry
 				) {
 					// throw error
@@ -194,18 +193,7 @@ class Api {
 		return res;
 	}
 	async login(admin) {
-		const res = await this.client.post('/login/', {
-			username: admin.username,
-			password: admin.password,
-		});
-		console.log('вызван логин');
-		this.setToken(await res.data.access);
-		this.setRefreshToken(await res.data.access);
-		console.log('после логина получен токен', this.getToken());
-		console.log('после логина получен рефрешь токен', this.getRefreshToken());
-		localStorage.setItem('refresh_token', await res.data.refresh);
-		localStorage.setItem('access_token', await res.data.access);
-		return res.data;
+		return this.client.post('/login/', { ...admin });
 	}
 
 	/* для приложения клиента */
@@ -518,7 +506,6 @@ class Api {
 		const source = CancelToken.source();
 		const request = await this.client.get('/client/', { cancelToken: source.token });
 		// return await this.client.get("/client/", {cancelToken: token});
-		request[CANCEL] = () => source.cancel();
 		return request;
 	}
 

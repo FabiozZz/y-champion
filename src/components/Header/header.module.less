@@ -1,0 +1,35 @@
+@import '../../styles/variables';
+.header {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e4e8f0;
+  &__wrapper {
+    background-color: @WHITE;
+    margin-bottom: 40px;
+  }
+  &__logo {
+    margin-left: 3.125%;
+  }
+  &__logout {
+    cursor: pointer;
+    margin-right: 2.604%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__name {
+    display: block;
+    @CAPTION();
+    color:@BLACK_50;
+  }
+  @media screen and (min-width: 1440px) {
+    &{
+      display: none;
+      &__wrapper {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

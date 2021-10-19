@@ -1,8 +1,47 @@
+@import './variables';
 .auth{
-  grid-column: 1/13;
-  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  margin: 0 32px;
+  grid-gap: 16px 24px;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  &__wrapper{
+    align-self: center;
+    grid-column: span 12;
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: repeat(12,1fr);
+    grid-auto-rows: min-content;
+  }
+  &__title{
+    @H1();
+    grid-column: span 12;
+    margin: 0;
+  }
+  &__fields{
+    background: @WHITE;
+    box-shadow: @BOX_SHADOW;
+    border-radius: 1px;
+    grid-column: span 12;
+    margin: 0 -16px;
+    display: grid;
+    grid-gap: 16px 24px;
+    grid-template-columns: repeat(12,1fr);
+    padding: 40px 16px;
+  }
+  &__username{
+    grid-column: 3/span 8;
+  }
+  &__password{
+    grid-column: 3/span 8;
+  }
+  .auth__btn{
+    padding-top: calc(40px - 16px);
+    grid-column: 5/span 4;
+  }
+  @media screen and(min-width: 1440px){
+    &__wrapper{
+      grid-column: 4/span 6;
+    }
+  }
 }

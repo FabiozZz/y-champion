@@ -9,6 +9,7 @@
 @BLACK:#2E384D;
 @BLACK_80:#69707F;
 @BLACK_50:#8798AD;
+@GRAY_CAPTION:#B0BAC9;
 @GRAY:#BFC5D2;
 @GRAY_50:#F4F6FC;
 @GRAY_60:#EEF3F5;
@@ -18,6 +19,85 @@
 @RUBY_CARD:#A1234B;
 @SAPPHIRE_CARD:#082567;
 @DIAMOND_CARD:#B7F1DC;
+
+@BOX_SHADOW: 0px 10px 20px rgba(46, 91, 255, 0.07);
+
+/* BTN STYLES */
+
+@BTN_PRIMARY: {
+  color: @WHITE;
+  background: @GREEN;
+  &:hover {
+    background: #3EBA3C;
+  }
+  &:active{
+    background: #32AB30;
+  }
+  &:disabled{
+    background: @GRAY_60;
+    color: @GRAY;
+  }
+  &:focus{
+    outline-offset: -4px;
+    outline: rgba(67, 191, 65, 0.26) solid 8px;
+  }
+};
+@BTN_DEFAULT: {
+  color: @BLACK;
+  background: transparent;
+  &:hover {
+    background: rgba(46, 56, 77, 0.14);
+  }
+  &:active{
+    background: rgba(46, 56, 77, 0.5);
+  }
+  &:disabled{
+    background: @GRAY_60;
+    color: @GRAY;
+  }
+  &:focus{
+    outline-offset: -4px;
+    outline: 8px solid rgba(135, 152, 173, 0.35);
+  }
+};
+@BTN_DANGER: {
+  @BTN_PRIMARY();
+  background: @RED;
+  &:hover {
+    background: #D61414;
+  }
+  &:active {
+    background: #BD0E0F;
+  }
+  &:disabled {
+    background: @GRAY_60;
+    color: @GRAY;
+  }
+  &:focus {
+    outline-offset: -4px;
+    outline: 8px solid rgba(229, 14, 15, 0.4);
+  }
+
+};
+@BTN_LIGHT: {
+  color:@WHITE;
+  background: transparent;
+  &:hover {
+    background: rgba(46, 56, 77, 0.14);
+  }
+  &:active {
+    background: @BLACK;
+  }
+  &:disabled {
+    background: @GRAY_60;
+    color: @GRAY;
+  }
+  &:focus {
+    outline-offset: -4px;
+    outline: 8px solid rgba(255, 255, 255, 0.35);
+  }
+
+};
 
 /* TEXT STYLES */
 @H1:{
